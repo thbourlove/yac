@@ -360,9 +360,6 @@ static zval * yac_get_impl(char * prefix, uint prefix_len, char *key, uint len, 
 #else
 					ret = yac_serializer_php_unpack(data, size, &msg TSRMLS_CC);
 #endif
-					if (!ret) {
-						php_error_docref(NULL TSRMLS_CC, E_WARNING, "Unserialization failed");
-					}
 					efree(data);
 				}
 				break;
